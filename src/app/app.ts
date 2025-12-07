@@ -9,7 +9,7 @@ import clarity from '@microsoft/clarity';
 })
 export class App {
   constructor(private router: Router) {
-    clarity.init('ugz2big9xh'); // tu project ID
+    clarity.init('uhvm84etaf'); // tu project ID
 
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
