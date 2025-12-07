@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
+import clarity from '@microsoft/clarity';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +8,13 @@ import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('prueba-app');
-
   constructor(private router: Router) {
+    clarity.init('ugz2big9xh'); // tu project ID
+
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        (window as any).clarity('set', 'page', event.urlAfterRedirects);
+        // Usa setTag para marcar la página
+        clarity.setTag('page', event.urlAfterRedirects);
       }
     });
   }
