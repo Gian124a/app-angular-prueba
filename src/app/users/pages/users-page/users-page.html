@@ -1,0 +1,31 @@
+<div class="p-4">
+  <h2 class="text-3xl font-bold text-white mb-6">Users List</h2>
+
+  <div *ngIf="isLoading()" class="text-indigo-400">Loading users...</div>
+  <div *ngIf="error()" class="text-red-500">Error: {{ error() }}</div>
+
+  <div *ngIf="!isLoading() && !error() && users().length > 0" class="overflow-x-auto">
+    <table class="min-w-full bg-gray-800 rounded-lg shadow-md">
+      <thead>
+        <tr class="bg-gray-700 text-left text-gray-300">
+          <th class="py-3 px-4 uppercase font-semibold text-sm">ID</th>
+          <th class="py-3 px-4 uppercase font-semibold text-sm">Nombre</th>
+          <th class="py-3 px-4 uppercase font-semibold text-sm">Apellido</th>
+          <th class="py-3 px-4 uppercase font-semibold text-sm">Usuario</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-400">
+        <tr *ngFor="let user of users()" class="border-b border-gray-700 hover:bg-gray-700">
+          <td class="py-3 px-4">{{ user._id }}</td>
+          <td class="py-3 px-4">{{ user.nombre }}</td>
+          <td class="py-3 px-4">{{ user.apellido }}</td>
+          <td class="py-3 px-4">{{ user.usuario }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="!isLoading() && !error() && users().length === 0" class="text-gray-400 mt-4">
+    No users found.
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<nav class="bg-[#16161d] h-[70px] w-full flex items-center justify-between px-6">
+  <div class="flex gap-3">
+    <a
+      routerLink="/home/profile"
+      routerLinkActive="bg-indigo-500"
+      class="rounded-md bg-[#2a2842] px-3.5 py-2.5 text-md font-medium text-white shadow-xs cursor-pointer hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+      >Profile</a
+    >
+    <a
+      routerLink="/home/users"
+      routerLinkActive="bg-indigo-500"
+      class="rounded-md bg-[#2a2842] px-3.5 py-2.5 text-md font-medium text-white shadow-xs cursor-pointer hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+      >Usuarios</a
+    >
+  </div>
+  <a
+    (click)="logout()"
+    class="rounded-md bg-[#2a2842] px-3.5 py-2.5 text-md font-medium text-white shadow-xs cursor-pointer hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+    >Logout</a
+  >
+</nav>
+
+<div class="relative top-0 h-[calc(100vh-70px)] bg-[#0b0d15] flex justify-center items-center">
+  <router-outlet />
+</div>
